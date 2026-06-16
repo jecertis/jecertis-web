@@ -532,6 +532,36 @@
       color: var(--slate-500);
     }
 
+    /* ── DPIIT RECOGNITION BADGE ── */
+    .dpiit-badge {
+      display: inline-flex;
+      flex-direction: column;
+      gap: 4px;
+      margin-top: 20px;
+      padding: 12px 16px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius);
+      max-width: 280px;
+    }
+    .dpiit-badge-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--teal-500);
+    }
+    .dpiit-badge-name {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--white);
+    }
+    .dpiit-badge-sub {
+      font-size: 12px;
+      color: var(--slate-500);
+      line-height: 1.5;
+    }
+
     /* ── REVEAL ANIMATION ── */
     .reveal {
       opacity: 0;
@@ -756,6 +786,11 @@
       <div class="footer-brand">
         <div class="footer-brand-name">Je<span>Certis</span></div>
         <p>Regulatory consulting and intelligent compliance tools. Helping organisations meet GDPR, DPDP, and DORA requirements with confidence.</p>
+        <div class="dpiit-badge" aria-label="DPIIT Recognised Startup">
+          <span class="dpiit-badge-label">Govt. of India</span>
+          <span class="dpiit-badge-name">DPIIT Recognised Startup</span>
+          <span class="dpiit-badge-sub">Recognition No. DIPP267272 &middot; Registered on BHASKAR</span>
+        </div>
       </div>
       <div class="footer-links">
         <div class="footer-col">
