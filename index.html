@@ -532,6 +532,109 @@
       color: var(--slate-500);
     }
 
+    /* ── ABOUT ── */
+    .about { background: var(--white); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+    .about-body p {
+      font-size: 16px;
+      color: var(--slate-500);
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+    .about-values {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .about-value {
+      background: var(--slate-100);
+      border: 1px solid #E2E8F0;
+      border-radius: var(--radius-lg);
+      padding: 24px 20px;
+      border-top: 3px solid var(--teal-700);
+    }
+    .about-value-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--teal-100);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 14px;
+    }
+    .about-value-icon svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--teal-700);
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .about-value h4 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--slate-900);
+      margin-bottom: 6px;
+    }
+    .about-value p {
+      font-size: 13px;
+      color: var(--slate-500);
+      line-height: 1.6;
+    }
+    .about-team {
+      margin-top: 48px;
+      padding-top: 40px;
+      border-top: 1px solid #E2E8F0;
+    }
+    .about-team-label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--teal-700);
+      margin-bottom: 20px;
+    }
+    .team-member {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .team-avatar {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--teal-700), var(--juro-blue));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--white);
+    }
+    .team-member-info h4 {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--slate-900);
+    }
+    .team-member-info p {
+      font-size: 14px;
+      color: var(--slate-500);
+      margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      .about-grid { grid-template-columns: 1fr; gap: 40px; }
+      .about-values { grid-template-columns: 1fr; }
+    }
+
     /* ── REVEAL ANIMATION ── */
     .reveal {
       opacity: 0;
@@ -596,6 +699,7 @@
       <ul class="nav-links" id="navLinks">
         <li><a href="#services">Services</a></li>
         <li><a href="#products">Products</a></li>
+        <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
       <button class="nav-hamburger" id="navToggle" aria-label="Toggle navigation">
@@ -737,6 +841,50 @@
     </div>
   </section>
 
+  <!-- ABOUT -->
+  <section class="section about" id="about">
+    <div class="section-inner">
+      <p class="section-eyebrow reveal">Who we are</p>
+      <h2 class="section-title reveal">Compliance auditing. Automated where it can be. Expert-led where it must be.</h2>
+      <div class="about-grid">
+        <div class="about-body reveal">
+          <p>Compliance auditing was broken in two ways: too slow when done manually, and too shallow when automated. Most companies either hired expensive consultants who delivered a one-time report, or bought tools that flagged issues without the regulatory depth to act on them.</p>
+          <p>We built JeCertis to offer both — expert-led auditing services for the engagements that need human judgment, and Juro, a product that automates continuous scanning on top of that same expertise. The rules in Juro come from the same regulatory knowledge we apply in our consulting work.</p>
+        </div>
+        <div class="about-values reveal">
+          <div class="about-value">
+            <div class="about-value-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h4>Expertise-led</h4>
+            <p>The rules in Juro come from real auditing experience — not generic checklists assembled from public documentation.</p>
+          </div>
+          <div class="about-value">
+            <div class="about-value-icon">
+              <svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <h4>Automation-first</h4>
+            <p>What used to take weeks of manual review, Juro does in minutes — continuously, not just at audit time.</p>
+          </div>
+          <div class="about-value">
+            <div class="about-value-icon">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            </div>
+            <h4>Regulation-precise</h4>
+            <p>Findings are mapped to specific legal provisions — not best-practice advice that doesn't hold up in a regulatory review.</p>
+          </div>
+          <div class="about-value">
+            <div class="about-value-icon">
+              <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+            </div>
+            <h4>One roof</h4>
+            <p>Consulting and product from the same team — so the expertise in your audit is the same expertise embedded in your tooling.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CONTACT -->
   <section class="section contact" id="contact">
     <div class="section-inner">
@@ -768,6 +916,7 @@
           <h4>Company</h4>
           <ul>
             <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
