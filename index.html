@@ -3,44 +3,75 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JeCertis Private Limited</title>
-  <meta name="description" content="JeCertis Private Limited is the legal entity behind Juro. CIN, DPIIT recognition, and registered office details.">
+  <title>JeCertis: SOC 2 and ISO 27001 Audits, Delivered</title>
+  <meta name="description" content="JeCertis coordinates SOC 2 and ISO 27001 audit engagements, delivered by independent auditors working as consultants, with Juro evidence in the loop. Pilot stage.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://jecertis.com/">
 
   <!-- ══ Open Graph ══ -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://jecertis.com/">
-  <meta property="og:title" content="JeCertis Private Limited">
-  <meta property="og:description" content="JeCertis Private Limited is the legal entity behind Juro. CIN, DPIIT recognition, and registered office details.">
+  <meta property="og:title" content="JeCertis: SOC 2 and ISO 27001 Audits, Delivered">
+  <meta property="og:description" content="JeCertis coordinates SOC 2 and ISO 27001 audit engagements, delivered by independent auditors working as consultants, with Juro evidence in the loop. Pilot stage.">
   <meta property="og:site_name" content="JeCertis">
   <meta property="og:locale" content="en_US">
 
   <!-- ══ Twitter Card ══ -->
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="JeCertis Private Limited">
-  <meta name="twitter:description" content="JeCertis Private Limited is the legal entity behind Juro. CIN, DPIIT recognition, and registered office details.">
+  <meta name="twitter:title" content="JeCertis: SOC 2 and ISO 27001 Audits, Delivered">
+  <meta name="twitter:description" content="JeCertis coordinates SOC 2 and ISO 27001 audit engagements, delivered by independent auditors working as consultants, with Juro evidence in the loop. Pilot stage.">
 
-  <!-- ══ Structured Data: Organization ══
-       BL-MKT-082 DECIDED 2026-07-21: jecertis.com collapses to a minimal
-       legal-entity page. This node stays a REUSE of jurocompliant.com's
-       canonical Organization @id (per BL-MKT-083's success condition) —
-       jecertis.com is the legal entity behind the product, not a second
-       marketing surface, so there is no competing @id to declare here. ══ -->
+  <!-- ══ Structured Data: Organization + Service ══
+       2026-09-22 founder ruling SUPERSEDES BL-MKT-082/083/084: jecertis.com
+       is no longer a minimal legal-entity stub reusing jurocompliant.com's
+       Organization @id. It is now its own brand surface (audit delivery:
+       SOC 2 / ISO 27001 engagements via independent auditors, Juro-in-the-
+       loop) with its own @id. jurocompliant.com remains the separate
+       scanner-product brand and keeps its own Organization node in its own
+       repo; this page references it only as a bare @id link, not a redefinition. ══ -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "@id": "https://jurocompliant.com/#organization",
-    "name": "JuroCompliant",
-    "alternateName": ["Juro", "Jurocompliant Scanner"],
-    "legalName": "JeCertis Private Limited",
-    "url": "https://jurocompliant.com",
-    "email": "help@jurocompliant.com",
-    "description": "Non-custodial compliance scanning for DPDP Act 2023, GDPR, and DORA with signed, deterministic, verifiable artifacts.",
-    "sameAs": [
-      "https://github.com/jecertis",
-      "https://jecertis.com"
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://jecertis.com/#organization",
+        "name": "JeCertis Private Limited",
+        "legalName": "JeCertis Private Limited",
+        "url": "https://jecertis.com",
+        "email": "admin@jecertis.com",
+        "description": "JeCertis coordinates SOC 2 and ISO 27001 audit engagements delivered by independent auditors working as consultants, with Juro evidence in the loop.",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "101 Duo Harmony, 1 Surjan Das Road, Indiranagar",
+          "addressLocality": "Bengaluru Urban",
+          "addressRegion": "Karnataka",
+          "postalCode": "560038",
+          "addressCountry": "IN"
+        },
+        "sameAs": [
+          "https://github.com/jecertis"
+        ]
+      },
+      {
+        "@type": "Service",
+        "@id": "https://jecertis.com/#audit-delivery",
+        "name": "SOC 2 and ISO 27001 Audit Delivery",
+        "serviceType": "Audit coordination",
+        "provider": { "@id": "https://jecertis.com/#organization" },
+        "description": "Coordination of SOC 2 and ISO 27001 audit engagements, delivered by independent auditors working as paid consultants, using Juro-generated evidence as engagement input. Pilot stage: no auditor panel is assembled yet and no engagements have been completed.",
+        "areaServed": "IN",
+        "audience": [
+          {
+            "@type": "Audience",
+            "audienceType": "Companies preparing for or undergoing a SOC 2 or ISO 27001 audit"
+          },
+          {
+            "@type": "Audience",
+            "audienceType": "Independent auditors considering consultant engagements"
+          }
+        ]
+      }
     ]
   }
   </script>
@@ -60,6 +91,9 @@
       --slate-700: #334155;
       --slate-500: #64748B;
       --slate-100: #F1F5F9;
+      --amber-50: #FFFBEB;
+      --amber-300: #FCD34D;
+      --amber-800: #92400E;
       --white: #FFFFFF;
       --font: 'Inter', system-ui, -apple-system, sans-serif;
       --radius: 8px;
@@ -83,7 +117,7 @@
       padding: 32px 24px;
     }
     .header-inner {
-      max-width: 640px;
+      max-width: 760px;
       margin: 0 auto;
       font-size: 20px;
       font-weight: 700;
@@ -95,34 +129,105 @@
     /* ── MAIN ── */
     main {
       flex: 1;
-      display: flex;
-      align-items: center;
       padding: 64px 24px;
     }
-    .card {
-      max-width: 640px;
+    .wrap {
+      max-width: 760px;
       margin: 0 auto;
       width: 100%;
     }
-    .card h1 {
-      font-size: 28px;
+
+    .hero h1 {
+      font-size: 32px;
       font-weight: 700;
       color: var(--slate-900);
       letter-spacing: -0.5px;
       margin-bottom: 16px;
     }
-    .card > p {
-      font-size: 16px;
+    .hero > p {
+      font-size: 17px;
       color: var(--slate-500);
       line-height: 1.7;
-      margin-bottom: 32px;
+      margin-bottom: 28px;
+      max-width: 620px;
     }
+
+    .pilot-note {
+      background: var(--amber-50);
+      border: 1px solid var(--amber-300);
+      border-radius: var(--radius-lg);
+      padding: 18px 24px;
+      margin-bottom: 48px;
+      font-size: 14px;
+      color: var(--amber-800);
+    }
+    .pilot-note strong { display: block; margin-bottom: 4px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.03em; }
+
+    section.block { margin-bottom: 48px; }
+    section.block h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--slate-900);
+      margin-bottom: 12px;
+      letter-spacing: -0.3px;
+    }
+    section.block p { margin-bottom: 14px; font-size: 15px; }
+    section.block ul { margin: 0 0 14px 20px; font-size: 15px; }
+    section.block li { margin-bottom: 6px; }
+
+    .audience-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .audience-card {
+      background: var(--slate-100);
+      border: 1px solid #E2E8F0;
+      border-radius: var(--radius-lg);
+      padding: 24px;
+    }
+    .audience-card h3 {
+      font-size: 16px;
+      color: var(--slate-900);
+      margin-bottom: 10px;
+    }
+    .audience-card p { font-size: 14px; margin-bottom: 16px; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 22px;
+      border-radius: var(--radius);
+      font-family: var(--font);
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      background: var(--teal-700);
+      color: var(--white);
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+    .btn:hover {
+      background: var(--teal-600);
+      transform: translateY(-2px);
+    }
+    .btn.secondary {
+      background: var(--white);
+      color: var(--teal-700);
+      border: 1px solid var(--teal-700);
+    }
+    .btn.secondary:hover {
+      background: var(--slate-100);
+    }
+    .btn-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
+
+    /* ── LEGAL ENTITY ── */
     .entity-details {
       background: var(--slate-100);
       border: 1px solid #E2E8F0;
       border-radius: var(--radius-lg);
       padding: 28px 32px;
-      margin-bottom: 32px;
     }
     .entity-details dl {
       display: grid;
@@ -139,24 +244,6 @@
       font-size: 14px;
       color: var(--slate-900);
     }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 14px 28px;
-      border-radius: var(--radius);
-      font-family: var(--font);
-      font-size: 15px;
-      font-weight: 600;
-      text-decoration: none;
-      background: var(--teal-700);
-      color: var(--white);
-      transition: background 0.3s ease, transform 0.3s ease;
-    }
-    .btn:hover {
-      background: var(--teal-600);
-      transform: translateY(-2px);
-    }
 
     /* ── FOOTER ── */
     .footer {
@@ -169,7 +256,8 @@
       color: var(--slate-500);
     }
 
-    @media (max-width: 480px) {
+    @media (max-width: 620px) {
+      .audience-grid { grid-template-columns: 1fr; }
       .entity-details dl { grid-template-columns: 1fr; gap: 4px; }
       .entity-details dt { margin-top: 12px; }
       .entity-details dt:first-child { margin-top: 0; }
@@ -185,25 +273,71 @@
 
   <!-- MAIN -->
   <main>
-    <div class="card">
-      <h1>JeCertis Private Limited</h1>
-      <p>Juro is a product of JeCertis Private Limited.</p>
+    <div class="wrap">
 
-      <div class="entity-details">
-        <dl>
-          <dt>CIN</dt>
-          <dd>U62013KA2026PTC218653</dd>
-          <dt>Startup India Recognition</dt>
-          <dd>DIPP267272</dd>
-          <dt>Registered address</dt>
-          <dd>101 Duo Harmony, 1 Surjan Das Road, Indiranagar, Bengaluru Urban, Karnataka 560038, India</dd>
-        </dl>
+      <div class="hero">
+        <h1>SOC 2 and ISO 27001 audits, delivered by independent auditors.</h1>
+        <p>JeCertis coordinates audit engagements. Independent auditors, working as paid consultants, do the audit work and issue their own findings. Juro's evidence runs in the loop throughout, and we're moving toward agent-assisted audit work over time.</p>
       </div>
 
-      <a href="https://jurocompliant.com" class="btn">
-        Visit jurocompliant.com
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
-      </a>
+      <div class="pilot-note">
+        <strong>Pilot stage</strong>
+        We're in pilot. No auditor panel is assembled yet, and no engagements have been completed. What's below describes the offering we're building toward, not a track record we have.
+      </div>
+
+      <section class="block">
+        <h2>What this is</h2>
+        <p>Companies that need a SOC 2 report or an ISO 27001 certificate get one from a licensed CPA firm or an accredited certification body, not from us. JeCertis's role is to coordinate that engagement: scope the audit, bring in an independent auditor as a paid consultant, and keep the evidence flowing between the company, the auditor, and Juro's scanning output.</p>
+        <p>Juro produces signed, deterministic evidence of a company's technical controls. That evidence becomes an input the auditor works from, not a substitute for the auditor's own testing or opinion. Over time, we expect more of the evidence-gathering and mapping work to be handled by agents, with the auditor reviewing and signing off, rather than doing that work by hand.</p>
+      </section>
+
+      <section class="block">
+        <h2>Who it's for</h2>
+        <div class="audience-grid">
+          <div class="audience-card">
+            <h3>Companies needing a SOC 2 or ISO 27001 audit</h3>
+            <p>If you need an audit engagement set up, evidence gathered efficiently, and an independent auditor brought in to do the work, tell us where you are in the process.</p>
+            <div class="btn-row">
+              <a href="mailto:admin@jecertis.com" class="btn">Get in touch</a>
+            </div>
+          </div>
+          <div class="audience-card">
+            <h3>Independent auditors considering consultant work</h3>
+            <p>We're assembling the first engagements for pilot-stage auditor consultants. If you're a licensed auditor and want to hear more about how the engagements are structured, reach out.</p>
+            <div class="btn-row">
+              <a href="mailto:admin@jecertis.com" class="btn secondary">Get in touch</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="block">
+        <h2>Juro, the scanner</h2>
+        <p>Juro is the separate scanner product that generates the evidence JeCertis-coordinated audits draw on. It's a distinct brand and site.</p>
+        <div class="btn-row">
+          <a href="https://jurocompliant.com" class="btn secondary">
+            Visit jurocompliant.com
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+          </a>
+        </div>
+      </section>
+
+      <section class="block">
+        <h2>Legal entity</h2>
+        <div class="entity-details">
+          <dl>
+            <dt>Entity</dt>
+            <dd>JeCertis Private Limited</dd>
+            <dt>CIN</dt>
+            <dd>U62013KA2026PTC218653</dd>
+            <dt>Startup India Recognition</dt>
+            <dd>DIPP267272</dd>
+            <dt>Registered address</dt>
+            <dd>101 Duo Harmony, 1 Surjan Das Road, Indiranagar, Bengaluru Urban, Karnataka 560038, India</dd>
+          </dl>
+        </div>
+      </section>
+
     </div>
   </main>
 
