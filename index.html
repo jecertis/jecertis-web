@@ -282,6 +282,17 @@
     .register tr:last-child td { border-bottom: 1px solid var(--rule); }
     .register .fw-name { color: var(--ink); font-weight: 600; white-space: nowrap; }
     .register .fw-scope { color: var(--ink-faint); }
+    .register-group td {
+      padding: 20px 12px 6px 0;
+      border-bottom: none;
+      font-family: var(--sans);
+      font-weight: 600;
+      font-size: 11px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+    }
+    .register-group:first-child td { padding-top: 0; }
     .status {
       display: inline-flex;
       align-items: center;
@@ -433,7 +444,7 @@
 
           <div class="hero">
             <h1>Compliance audits and assessments, delivered by our own consultant-auditors.</h1>
-            <p>JeCertis hires the auditors who deliver this work onto our own team as payroll consultants. We're starting with SOC 2 and ISO 27001, and building toward a broader set of frameworks below.</p>
+            <p>JeCertis hires the auditors who deliver this work onto our own team as payroll consultants. We're starting with SOC 2 and ISO 27001, and building toward data-protection and AI-governance assessments (ISO/IEC 42001, NIST AI RMF) below.</p>
           </div>
 
           <section class="block">
@@ -478,6 +489,9 @@
                   <td class="fw-name">EU DORA</td>
                   <td class="fw-scope">Digital operational resilience assessment</td>
                   <td><span class="status roadmap">Planned</span></td>
+                </tr>
+                <tr class="register-group">
+                  <td colspan="3">AI governance</td>
                 </tr>
                 <tr>
                   <td class="fw-name">ISO/IEC 42001</td>
